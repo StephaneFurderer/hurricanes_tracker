@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+requests
+folium
+streamlit-folium
+geopy
+hurdat2parser
+certifi
+plotly
+geopandas
+openpyxl
