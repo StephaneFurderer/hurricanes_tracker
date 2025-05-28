@@ -25,10 +25,12 @@ def process_hurricane_data():
     # Convert to DataFrame
     records = []
     for storm in parser.tc.values():
+        # Use storm ID as name for unnamed hurricanes
+        storm_name = storm.atcfid if storm.name == "UNNAMED" else storm.name
         for entry in storm.entry:
             records.append({
                 'storm_id': storm.atcfid,
-                'name': storm.name,
+                'name': storm_name,
                 'date': entry.date.strftime('%Y%m%d'),
                 'time': entry.time.strftime('%H%M'),
                 'status': entry.status,
